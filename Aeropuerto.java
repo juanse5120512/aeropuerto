@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Aeropuerto{
+    //atributos
     private ArrayList<Aerolinea> aerolineas;
     private ArrayList<Vuelo> vuelos;
     private ArrayList<Pasajero> pasajeros;
@@ -66,10 +67,24 @@ public class Aeropuerto{
     }
 
     public void llamarPasajero(Pasajero pas){
-        System.out.println("ULTIMO LLAMADO AL PASAJERO " + pas.getNombre() + " A LA PUERTA " + pas.getPuerta());
+        System.out.println("ULTIMO LLAMADO AL PASAJERO " + pas.getNombre() + " A LA PUERTA " + pas.getVuelo().getPuerta());
     }
 
-    public 
+    public void hacerCheckIn(Pasajero pas){
+        if(pas.isPasaporte()){
+            System.out.println("CHECK IN VALIDADO");
+        }else{
+            System.out.println("CHECK IN NO DISPONIBLE");
+        }
+    }
+
+    public void puedeDespachar(Pasajero pas){
+        if(pas.getPeso_del_equipaje() > 23.0){
+            System.out.println("EL PESO ESTA EXCEDIDO");
+        }else{
+            System.out.println("SU EQUIPAJE FUE DESPACHADO");
+        }
+    }
 
     
     
